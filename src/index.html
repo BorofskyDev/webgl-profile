@@ -4,13 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <title>Joel Borofsky | Creative Developer</title>
-    <script src="./navigation.js" defer></script>
+    
 </head>
 
 <body>
     <a href="#" class="skip-to-content">Skip to Content</a>
-    <header class="primary-header flex">
+    <!-- <header class="primary-header flex">
         <div>
             <img src="./icons/user-astronaut-solid.svg" alt="" class="logo">
         </div>
@@ -18,7 +22,7 @@
                 aria-expanded="false">Menu</span></button>
         <nav>
             <ul id="primary-navigation" data-visible="false" class="primary-navigation underline-indicators flex">
-                <li class="active"><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="#"><span
+                <li ><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="#"><span
                             aria-hidden="true">00</span>Home</a>
                 <li><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="#"><span
                             aria-hidden="true">01</span>About</a>
@@ -28,11 +32,30 @@
                             aria-hidden="true">03</span>FAQ</a>
             </ul>
         </nav>
-    </header>
+    </header> -->
+
+    <section class="landing-container ">
+        <h1 class="landing-container--title text-white ff-sans uppercase letter-spacing-2">Joel Borofsky</h1>
+        <h2 class="landing-container--subtitle text-white ff-sans uppercase letter-spacing-3">ui/ux focused</h2>
+        <h2 class="landing-container--subtitle text-white ff-sans uppercase letter-spacing-3">Creative Developer</h1>
+        <div class="flex">
+    </section>
     <canvas class="webgl"></canvas>
+    <section class="social-media-container">
+        <div style="margin-top: 5rem">
+            <!-- explore button -->
+            <a href="#" class="large-button uppercase ff-sans-alt text-dark bg-white fs-600"
+            style="margin-top: 5rem">contact</a>
+            <div class="social-media">
+                <a href="https://twitter.com/DevBorofsky" target="_blank"><i class="fa fa-twitter-square" id="twitter"></i></a>
+                <a href="https://github.com/BorofskyDev" target="_blank"><i class="fa fa-github-square github" id="github"></i></a>
+                <a href="https://www.linkedin.com/in/joelborofsky/" target="_blank"><i class="fa fa-linkedin-square" id="linkedin"></i></a>
+            </div>
+        </div>
+    </section>
 
 
-    <section></section>
+
 </body>
 
 </html>

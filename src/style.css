@@ -55,6 +55,7 @@
   /* try to use rem on font size due to access. PX can override large print devices */
   --fs-900: 7rem;
   --fs-800: 3.5rem;
+  --fs-750: 3rem;
   --fs-700: 2rem;
   --fs-600: 1.5rem;
   --fs-500: 1rem;
@@ -75,6 +76,7 @@
   :root {
     --fs-900: 9.375rem;
     --fs-800: 6.25rem;
+    --fs-750: 4.95
     --fs-700: 3.5rem;
     --fs-600: 2rem;
     --fs-500: 1.75rem;
@@ -155,15 +157,6 @@ select {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-}
-
-/* CANVAS */
-.webgl {
-  position: absolute;
-  top: 0;
-  left: 0;
-  outline: none;
-  mix-blend-mode: exclusion;
 }
 
 /* ------------------- */
@@ -414,6 +407,10 @@ select {
   font-size: var(--fs-800);
 }
 
+.fs-750 {
+    font-size: var(--fs-750);
+}
+
 .fs-700 {
   font-size: var(--fs-700);
 }
@@ -488,7 +485,8 @@ select {
 
 .underline-indicators > .active,
 .underline-indicators > [aria-selected='true'] {
-  border-bottom: 0.3rem solid var(--white);
+  color: var(--white);
+  border-color: var(--white)
 }
 
 .tab-list {
@@ -564,7 +562,7 @@ select {
   color: transparent;
   background-size: 300%;
   background-position: -100%;
-  animation: animatedText 6s infinite alternate-reverse;
+  animation: animatedText 6s alternate-reverse;
 }
 
 .gradient-text:hover,
@@ -699,7 +697,9 @@ select {
 
   .grid-container--home {
     padding-bottom: max(6rem, 20vh);
-    align-items: end;
+    align-items: center;
+    height: 100vh;
+    place-items: center;
   }
 
   .grid-container--home > *:first-child {
@@ -729,118 +729,103 @@ select {
     } */
 }
 
-/***********************/
-/** NAVBAR COMPONENTS **/
-/***********************/
+/************************/
+/** LANDING COMPONENTS **/
+/************************/
 
-.logo {
-  margin: 1.5rem clamp(1.5rem, 5vw, 3.5rem);
+/* CANVAS */
+.webgl {
+  position: absolute;
+  top: 0;
+  left: 0;
+  outline: none;
+  mix-blend-mode: exclusion;
 }
 
-.primary-header {
-  justify-content: space-between;
-  align-items: center;
-}
+/* LANDING PAGE */
 
-.primary-navigation {
-  --gap: clamp(1.5rem, 5vw, 3.5rem);
-  --underline-gap: 2rem;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  /* background: var(--white); */
-  backdrop-filter: blur(1.5rem);
-}
-
-.primary-navigation a {
-  text-decoration: none;
-}
-
-.primary-navigation a > span {
-  font-weight: 700;
-  margin-right: 0.5em;
-}
-
-.mobile-nav-toggle {
-  display: none;
-}
-
-@media (max-width: 35rem) {
-  .primary-navigation {
-    --underline-gap: 0.5rem;
-    position: fixed;
-    z-index: 1000;
-    inset: 0 0 0 30%;
-    list-style: none;
-    padding: min(20rem, 15vh) 2rem;
-    margin: 0;
+.landing-container {
+    height: 100vh;
+    display: flex;
     flex-direction: column;
-    transform: translateX(100%);
-    transition: transform 500ms ease-in-out;
-  }
-
-  .primary-navigation[data-visible='true'] {
-    transform: translateX(0);
-  }
-
-  .primary-navigation.underline-indicators > .active {
-    border: 0;
-  }
-
-  .mobile-nav-toggle {
-    display: block;
-    position: absolute;
-    z-index: 2000;
-    right: 1rem;
-    top: 2rem;
-    background: transparent;
-    background-image: url(./icons/icon-hamburger.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 1.5rem;
-    aspect-ratio: 1;
-    border: 0;
-  }
-
-  .mobile-nav-toggle[aria-expanded='true'] {
-    background-image: url(./icons/icon-close.svg);
-  }
-
-  .mobile-nav-toggle:focus-visible {
-    outline: 5px solid white;
-    outline-offset: 5px;
-  }
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-@media (min-width: 35em) {
-  .primary-navigation {
-    padding-inline: clamp(3rem, 7vw, 7rem);
-  }
+.landing-container--title {
+  font-size: 2rem;
+  line-height: 6rem;
 }
 
-@media (min-width: 35em) and (max-width: 44.999em) {
-  .primary-navigation a > span {
-    display: none;
-  }
+.landing-container--subtitle {
+  font-size: 1.3rem;
+  line-height: 3rem;
 }
 
-@media (min-width: 45em) {
-  .primary-header::after {
-    content: '';
-    display: block;
-    position: relative;
-    height: 1px;
-    width: 100%;
-    margin-right: -2.5rem;
-    background: var(--white);
-    order: 1;
-  }
+.social-media-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: -8rem;
+}
 
-  nav {
-    order: 2;
-  }
+.social-media {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: -4rem;
+  gap: 1.5rem;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+}
 
-  .primary-navigation {
-    margin-block: 2rem;
-  }
+
+
+#github,
+#twitter,
+#linkedin {
+  font-size: 3rem;
+  background-color: #18191f;
+  color: var(--white);
+  box-shadow: 2px 2px 2px #D2042D80, 10px 1px 12px #D2042D80,
+    2px 2px 10px #D2042D80, 2px 2px 3px #D2042D80, inset 2px 2px 10px #D2042D80,
+    inset 2px 2px 10px #D2042D80, inset 2px 2px 10px #D2042D80,
+    inset 2px 2px 10px #D2042D80;
+  border-radius: 25%;
+  padding: 11px 19px;
+  margin: 0 40px;
+  animation: social 3s linear infinite;
+  text-shadow: 0 0 50px var(--accent-bright), 0 0 100px var(--accent-bright), 0 0 150px var(--accent-bright),
+    0 0 200px var(--accent-bright);
+}
+
+#github:hover,
+#github:focus,
+#twitter:hover,
+#twitter:focus,
+#linkedin:hover,
+#linkedin:focus {
+    transform: scale(1.2)
+}
+
+#twitter:active,
+#github:active,
+#linkedin:active {
+    transform: scale(0.8)
+}
+
+#twitter {
+  animation-delay: 0.3s;
+}
+#linkedin {
+  animation-delay: 0.7s;
+}
+#github {
+  animation-delay: 0.1s;
 }
